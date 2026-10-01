@@ -4,3 +4,4 @@ platforms: [windows]
 configs:
   - nvim
   - rime
+  - ssh-client

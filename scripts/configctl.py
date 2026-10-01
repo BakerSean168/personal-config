@@ -5,6 +5,7 @@ import argparse
 import os
 import platform as py_platform
 import subprocess
+import shutil
 import sys
 from pathlib import Path
 from typing import Any
@@ -175,6 +176,19 @@ def ensure_git_checkout(row: dict[str, str]) -> Path:
     return target
 
 
+def run_installer(installer: str, target: Path, host_platform: str) -> None:
+    if host_platform == "windows":
+        shell = shutil.which("pwsh") or shutil.which("powershell")
+        if not shell:
+            raise RuntimeError("PowerShell is required for Windows install actions")
+        run([shell, "-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", installer], cwd=target)
+        return
+    shell = shutil.which("bash")
+    if not shell:
+        raise RuntimeError("bash is required for Linux/WSL install actions")
+    run([shell, "-lc", installer], cwd=target)
+
+
 def apply_profile(profile_name: str, host_platform: str) -> None:
     rows = plan_rows(profile_name, host_platform)
     for row in rows:
@@ -186,7 +200,7 @@ def apply_profile(profile_name: str, host_platform: str) -> None:
         if installer == "manual":
             print(f"    manual install required for {row['id']}; checkout is ready")
             continue
-        run(["bash", "-lc", installer], cwd=target)
+        run_installer(installer, target, host_platform)
 
 
 def command_validate(_: argparse.Namespace) -> int:

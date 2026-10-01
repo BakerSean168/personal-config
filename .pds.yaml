@@ -15,4 +15,5 @@ spec:
     - pds://personal-config/config/zsh
     - pds://personal-config/config/tmux
     - pds://personal-config/config/rime
+    - pds://personal-config/config/ssh-client
     - pds://personal-config/config/mihomo-rules

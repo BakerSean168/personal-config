@@ -15,6 +15,7 @@ This repository **does not own** Neovim, Zsh, Tmux, Rime, or Mihomo configuratio
 - `zsh-config`
 - `tmux-config`
 - `rime-config`
+- `ssh-client-config`
 - `mihomo-rules`
 
 The legacy `dotfiles` repository remains a rollback source while SSH client policy and remaining orchestration are migrated.
@@ -24,7 +25,7 @@ The legacy `dotfiles` repository remains a rollback source while SSH client poli
 - `vps-minimal`: Zsh + Tmux + Neovim
 - `linux-dev`: Zsh + Tmux + Neovim
 - `wsl-dev`: Zsh + Tmux + Neovim
-- `windows-main`: Neovim + Rime (declarative only until the Windows adapter is implemented)
+- `windows-main`: Neovim + Rime + SSH client aliases; PowerShell-backed install actions are supported
 
 ## Usage
 

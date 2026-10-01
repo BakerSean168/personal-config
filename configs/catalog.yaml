@@ -32,6 +32,14 @@ configs:
     install:
       linux: ./install.sh
       wsl: ./install.sh
+  ssh-client:
+    repository: https://github.com/BakerSean168/ssh-client-config.git
+    ref: main
+    platforms: [windows]
+    checkout:
+      windows: ~/AppData/Local/personal-config/repos/ssh-client-config
+    install:
+      windows: "& './install.ps1' -Profile windows-primary"
   rime:
     repository: https://github.com/BakerSean168/rime-config.git
     ref: main
