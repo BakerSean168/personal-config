@@ -41,13 +41,13 @@ configs:
     install:
       windows: manual
   mihomo-rules:
-    repository: https://github.com/BakerSean168/my-mihomo-rules.git
+    repository: https://github.com/BakerSean168/mihomo-rules.git
     ref: main
     platforms: [linux, wsl, windows]
     checkout:
-      linux: ~/.local/share/personal-config/repos/my-mihomo-rules
-      wsl: ~/.local/share/personal-config/repos/my-mihomo-rules
-      windows: ~/AppData/Local/personal-config/repos/my-mihomo-rules
+      linux: ~/.local/share/personal-config/repos/mihomo-rules
+      wsl: ~/.local/share/personal-config/repos/mihomo-rules
+      windows: ~/AppData/Local/personal-config/repos/mihomo-rules
     install:
       linux: manual
       wsl: manual
