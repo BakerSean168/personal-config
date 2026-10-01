@@ -1,0 +1,7 @@
+schema_version: 1
+profile: vps-minimal
+platforms: [linux]
+configs:
+  - zsh
+  - tmux
+  - nvim

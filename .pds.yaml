@@ -1,0 +1,18 @@
+apiVersion: pds/v1alpha1
+kind: Component
+metadata:
+  id: personal-config
+  name: Personal Config
+spec:
+  type: configuration-orchestrator
+  domain: personal-config
+  lifecycle: active
+  repository:
+    url: https://github.com/BakerSean168/personal-config.git
+    visibility: private
+  consumes:
+    - pds://personal-config/config/nvim
+    - pds://personal-config/config/zsh
+    - pds://personal-config/config/tmux
+    - pds://personal-config/config/rime
+    - pds://personal-config/config/mihomo-rules

@@ -1,0 +1,7 @@
+schema_version: 1
+profile: wsl-dev
+platforms: [wsl]
+configs:
+  - zsh
+  - tmux
+  - nvim

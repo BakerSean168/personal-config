@@ -1,0 +1,54 @@
+schema_version: 1
+configs:
+  nvim:
+    repository: https://github.com/BakerSean168/nvim-config.git
+    ref: main
+    platforms: [linux, wsl, windows]
+    checkout:
+      linux: ~/.config/nvim
+      wsl: ~/.config/nvim
+      windows: ~/AppData/Local/nvim
+    install:
+      linux: null
+      wsl: null
+      windows: null
+  zsh:
+    repository: https://github.com/BakerSean168/zsh-config.git
+    ref: main
+    platforms: [linux, wsl]
+    checkout:
+      linux: ~/.config/zsh-config
+      wsl: ~/.config/zsh-config
+    install:
+      linux: ./install.sh
+      wsl: ./install.sh
+  tmux:
+    repository: https://github.com/BakerSean168/tmux-config.git
+    ref: main
+    platforms: [linux, wsl]
+    checkout:
+      linux: ~/.config/tmux-config
+      wsl: ~/.config/tmux-config
+    install:
+      linux: ./install.sh
+      wsl: ./install.sh
+  rime:
+    repository: https://github.com/BakerSean168/rime-config.git
+    ref: main
+    platforms: [windows]
+    checkout:
+      windows: ~/AppData/Local/personal-config/repos/rime-config
+    install:
+      windows: manual
+  mihomo-rules:
+    repository: https://github.com/BakerSean168/my-mihomo-rules.git
+    ref: main
+    platforms: [linux, wsl, windows]
+    checkout:
+      linux: ~/.local/share/personal-config/repos/my-mihomo-rules
+      wsl: ~/.local/share/personal-config/repos/my-mihomo-rules
+      windows: ~/AppData/Local/personal-config/repos/my-mihomo-rules
+    install:
+      linux: manual
+      wsl: manual
+      windows: manual
