@@ -18,7 +18,7 @@ This repository **does not own** Neovim, Zsh, Tmux, Rime, or Mihomo configuratio
 - `ssh-client-config`
 - `mihomo-rules`
 
-The legacy `dotfiles` repository remains a rollback source while SSH client policy and remaining orchestration are migrated.
+The legacy `dotfiles` repository is archived and retained only for provenance/rollback archaeology. Zsh, Tmux, SSH client policy, and orchestration now have explicit canonical owners.
 
 ## Profiles
 
