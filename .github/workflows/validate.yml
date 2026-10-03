@@ -17,6 +17,7 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install --disable-pip-version-check -r requirements-dev.txt
       - run: python scripts/configctl.py validate
+      - run: PYTHONPATH=scripts python -m unittest -v scripts/test_configctl.py
       - run: python scripts/configctl.py plan vps-minimal --platform linux
       - run: python scripts/configctl.py plan wsl-dev --platform wsl
       - run: python scripts/configctl.py plan windows-main --platform windows

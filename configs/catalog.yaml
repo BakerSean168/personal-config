@@ -47,7 +47,7 @@ configs:
     checkout:
       windows: ~/AppData/Local/personal-config/repos/rime-config
     install:
-      windows: manual
+      windows: "& './install.ps1'"
   mihomo-rules:
     repository: https://github.com/BakerSean168/mihomo-rules.git
     ref: main
