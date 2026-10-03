@@ -124,6 +124,12 @@ def validate_all() -> list[str]:
                         errors.append(
                             f"{path}: config {config_id!r} does not support profile platform {host_platform!r}"
                         )
+                        continue
+                    installer = configs[config_id]["install"].get(host_platform)
+                    if installer == "manual":
+                        errors.append(
+                            f"{path}: config {config_id!r} requires a declarative install action for {host_platform!r}"
+                        )
         except Exception as exc:
             errors.append(f"{path}: {exc}")
     return errors

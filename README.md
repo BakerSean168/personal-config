@@ -25,7 +25,7 @@ The legacy `dotfiles` repository is archived and retained only for provenance/ro
 - `vps-minimal`: Zsh + Tmux + Neovim
 - `linux-dev`: Zsh + Tmux + Neovim
 - `wsl-dev`: Zsh + Tmux + Neovim
-- `windows-main`: Neovim + Rime + SSH client aliases; PowerShell-backed install actions are supported
+- `windows-main`: Neovim + Rime + SSH client aliases; the profile is fully declarative and PowerShell-backed where installation work is required
 
 ## Usage
 
@@ -35,4 +35,6 @@ python3 scripts/configctl.py plan vps-minimal
 python3 scripts/configctl.py apply vps-minimal
 ```
 
-`apply` currently supports Linux/WSL Git-backed artifacts with an explicit install command. It clones missing repositories, fast-forwards clean clones, refuses to overwrite dirty clones, and then delegates installation to the config repository's own installer when configured.
+`apply` supports Linux, WSL, and Windows Git-backed artifacts. It clones missing repositories, fast-forwards clean clones, refuses to overwrite dirty clones, and then delegates installation to the config repository's own installer when configured.
+
+A `null` install action means the checkout path itself is the consumed configuration (for example Neovim). `manual` remains valid only for catalog artifacts that are not selected by a composed profile. Profile validation rejects manual install steps so a declared host profile is reproducible end to end.
